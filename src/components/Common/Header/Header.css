@@ -1,0 +1,79 @@
+.cabecalho-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-bottom: 2px solid #334155;
+  box-sizing: border-box;
+}
+
+.cabecalho-relogio-hora {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #38bdf8;
+  background-color: #0f172a;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  min-width: 130px;
+  text-align: left;
+}
+
+.cabecalho-titulo-app {
+  text-align: center;
+}
+
+.cabecalho-titulo-texto {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.cabecalho-relogio-data {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #34d399;
+  background-color: #0f172a;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  min-width: 140px;
+  text-align: right;
+}
+
+.cabecalho-rotulo {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .cabecalho-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .cabecalho-titulo-app {
+    order: -1;
+  }
+
+  .cabecalho-relogio-hora,
+  .cabecalho-relogio-data {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+

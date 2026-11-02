@@ -1,0 +1,224 @@
+.excluir-container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 32px 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.excluir-titulo-operacao {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.excluir-busca-topo {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.excluir-grupo-busca {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 220px;
+  margin-right: 16px;
+}
+
+.excluir-rotulo {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.excluir-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-right: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.excluir-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.excluir-input-readonly {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #334155;
+  cursor: default;
+}
+
+.excluir-btn-buscar {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0284c7;
+  border: 1px solid #0369a1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.excluir-btn-buscar:hover:not(:disabled) {
+  background-color: #0369a1;
+}
+
+.excluir-card-confirmacao {
+  background-color: #fff5f5;
+  border: 1.5px solid #fecaca;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.excluir-aviso-alerta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.excluir-aviso-icone {
+  font-size: 1.4rem;
+}
+
+.excluir-grid-dados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 16px;
+  margin-bottom: 24px;
+}
+
+.excluir-campo-completo {
+  grid-column: 1 / -1;
+}
+
+.excluir-grupo-dado {
+  display: flex;
+  flex-direction: column;
+}
+
+.excluir-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid #fecaca;
+}
+
+.excluir-btn-confirmar {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #dc2626;
+  border: 1px solid #b91c1c;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.excluir-btn-confirmar:hover:not(:disabled) {
+  background-color: #b91c1c;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+}
+
+.excluir-btn-confirmar:disabled {
+  background-color: #94a3b8;
+  border-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.excluir-btn-cancelar {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.excluir-btn-cancelar:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.excluir-aviso-selecao {
+  text-align: center;
+  padding: 32px 16px;
+  color: #64748b;
+  font-size: 1rem;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  border: 1px dashed #cbd5e1;
+}
+
+@media (max-width: 640px) {
+  .excluir-container {
+    padding: 20px 16px 32px;
+  }
+
+  .excluir-busca-topo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .excluir-grupo-busca {
+    margin-right: 0;
+  }
+
+  .excluir-btn-buscar {
+    width: 100%;
+  }
+
+  .excluir-grid-dados {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .excluir-acoes {
+    flex-direction: column;
+  }
+
+  .excluir-btn-confirmar,
+  .excluir-btn-cancelar {
+    width: 100%;
+  }
+}
+

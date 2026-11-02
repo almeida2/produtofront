@@ -1,0 +1,166 @@
+.cadastrar-container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 32px 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.cadastrar-titulo-operacao {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cadastrar-formulario {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cadastrar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 20px;
+  width: 100%;
+}
+
+.cadastrar-campo-completo {
+  grid-column: 1 / -1;
+}
+
+.cadastrar-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.cadastrar-rotulo {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.cadastrar-obrigatorio {
+  color: #dc2626;
+  margin-left: 4px;
+}
+
+.cadastrar-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-right: 16px;
+}
+
+.cadastrar-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.cadastrar-input-erro {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.cadastrar-input-erro:focus {
+  border-color: #b91c1c;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+.cadastrar-mensagem-erro {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.cadastrar-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.cadastrar-btn-salvar {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #16a34a;
+  border: 1px solid #15803d;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.cadastrar-btn-salvar:hover:not(:disabled) {
+  background-color: #15803d;
+  box-shadow: 0 2px 4px rgba(22, 163, 74, 0.3);
+}
+
+.cadastrar-btn-salvar:disabled {
+  background-color: #94a3b8;
+  border-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.cadastrar-btn-limpar {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.cadastrar-btn-limpar:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  .cadastrar-container {
+    padding: 20px 16px 32px;
+  }
+
+  .cadastrar-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cadastrar-acoes {
+    flex-direction: column;
+  }
+
+  .cadastrar-btn-salvar,
+  .cadastrar-btn-limpar {
+    width: 100%;
+  }
+}
+
