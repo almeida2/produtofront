@@ -21,11 +21,24 @@ export function ProdutosOrchestrator() {
   const [produtoSelecionadoId, setProdutoSelecionadoId] = useState(null);
   const [feedback, setFeedback] = useState(null);
 
-  const aoMudarOperacao = (novaOperacao, idProduto = null) => {
+  /**
+   * Navegação disparada pelos BOTÕES do menu (Cadastrar, Listar, Consultar, Atualizar, Excluir).
+   * Limpa o feedback, pois o usuário está iniciando intencionalmente uma nova operação.
+   */
+  const aoNavegar = (novaOperacao) => {
+    setFeedback(null);
+    setOperacaoAtiva(novaOperacao);
+    setProdutoSelecionadoId(null);
+  };
+
+  /**
+   * Navegação programática disparada INTERNAMENTE pelos containers após o resultado de uma operação
+   * (ex: redirecionar para Listar após excluir, ou abrir Editar a partir da Listagem).
+   * NÃO limpa o feedback, para preservar a mensagem de sucesso ou erro da operação concluída.
+   */
+  const aoNavegarParaOperacao = (novaOperacao, idProduto = null) => {
     setOperacaoAtiva(novaOperacao);
     setProdutoSelecionadoId(idProduto);
-    // Apaga a mensagem de feedback em vermelho/erro ao selecionar qualquer uma das opções
-    setFeedback(null);
   };
 
   const aoNotificarFeedback = (novoFeedback) => {
@@ -41,10 +54,10 @@ export function ProdutosOrchestrator() {
       {/* 2. Header & Layout Geral: Relógio no canto esquerdo e Data no canto direito */}
       <Header />
 
-      {/* Navegação entre as operações */}
+      {/* Navegação entre as operações - usa aoNavegar para limpar feedback ao trocar de tela */}
       <Navigation
         operacaoAtiva={operacaoAtiva}
-        aoMudarOperacao={(op) => aoMudarOperacao(op, null)}
+        aoMudarOperacao={aoNavegar}
       />
 
       {/* Conteúdo Principal da Operação Ativa */}
@@ -53,7 +66,7 @@ export function ProdutosOrchestrator() {
           <CadastrarProdutosContainer
             aoNotificarFeedback={aoNotificarFeedback}
             aoSucessoCadastro={() => {
-              // Mantém na tela com feedback ativo
+              // Mantém na tela de cadastro com o feedback de sucesso visível
             }}
           />
         )}
@@ -61,7 +74,7 @@ export function ProdutosOrchestrator() {
         {operacaoAtiva === 'listar' && (
           <ListarProdutosContainer
             aoNotificarFeedback={aoNotificarFeedback}
-            aoNavegarParaOperacao={aoMudarOperacao}
+            aoNavegarParaOperacao={aoNavegarParaOperacao}
           />
         )}
 
@@ -69,7 +82,7 @@ export function ProdutosOrchestrator() {
           <ConsultarProdutoContainer
             produtoIdInicial={produtoSelecionadoId}
             aoNotificarFeedback={aoNotificarFeedback}
-            aoNavegarParaOperacao={aoMudarOperacao}
+            aoNavegarParaOperacao={aoNavegarParaOperacao}
           />
         )}
 
@@ -77,7 +90,7 @@ export function ProdutosOrchestrator() {
           <EditarProdutoContainer
             produtoIdInicial={produtoSelecionadoId}
             aoNotificarFeedback={aoNotificarFeedback}
-            aoNavegarParaOperacao={aoMudarOperacao}
+            aoNavegarParaOperacao={aoNavegarParaOperacao}
           />
         )}
 
@@ -85,7 +98,7 @@ export function ProdutosOrchestrator() {
           <ExcluirProdutoContainer
             produtoIdInicial={produtoSelecionadoId}
             aoNotificarFeedback={aoNotificarFeedback}
-            aoNavegarParaOperacao={aoMudarOperacao}
+            aoNavegarParaOperacao={aoNavegarParaOperacao}
           />
         )}
       </main>
