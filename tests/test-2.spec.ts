@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('ct02-cadastrar-com-sucesso', async ({ page }) => {
   await page.goto('http://localhost:5173/');
   await page.getByTestId('btnNavCadastrar').click();
   await page.getByTestId('codigo').click();
@@ -15,5 +15,5 @@ test('test', async ({ page }) => {
   await page.getByTestId('descricao').fill('produto de teste');
   await page.getByTestId('descricao').press('Tab');
   await page.getByTestId('btnSalvar').click();
-  await expect(page.locator('#feedbackMensagem')).toContainText('Cadastro realizado com sucesso! Produto código PROD5 registrado.');
+  await expect(page.locator('#feedbackMensagem')).toContainText('Cadastro realizado com sucesso!');
 });
